@@ -1,0 +1,5 @@
+micronaut:
+    application:
+        name: validationtest
+    server:
+        port: 8080
