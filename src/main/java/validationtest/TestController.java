@@ -10,22 +10,26 @@ import javax.validation.Valid;
 @Controller("/")
 public class TestController {
     @Get("/asyncok")
-    Single<Pojo> asyncok() {
+    @Valid
+    public Single<Pojo> asyncok() {
         return Single.just(validate(new Pojo("")));
     }
 
     @Get("/asyncnotok")
-    Single<Pojo> asyncnotok() {
+    @Valid
+    public Single<Pojo> asyncnotok() {
         return Single.just(new Pojo(""));
     }
 
     @Get("/syncok")
-    Pojo syncok() {
+    @Valid
+    public Pojo syncok() {
         return validate(new Pojo(""));
     }
 
     @Get("/syncnotok")
-    Pojo syncnotok() {
+    @Valid
+    public Pojo syncnotok() {
         return new Pojo("");
     }
 
